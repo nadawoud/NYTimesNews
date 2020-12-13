@@ -54,6 +54,7 @@
 		61184EC025861EED00585997 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				61184EC125861F2400585997 /* ArticleCell.swift */,
 				61184EC525864D9800585997 /* NYTTitleLabel.swift */,
 				61184EC82586568D00585997 /* NYTByLineLabel.swift */,
 				61FD3C3525865B0A0027E29A /* NYTArticleThumbnailImageView.swift */,
@@ -204,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61184EC225861F2400585997 /* ArticleCell.swift in Sources */,
 				61184EC625864D9800585997 /* NYTTitleLabel.swift in Sources */,
 				61AD686A2583D350009C93A4 /* NetworkManager.swift in Sources */,
 				61184EC92586568D00585997 /* NYTByLineLabel.swift in Sources */,

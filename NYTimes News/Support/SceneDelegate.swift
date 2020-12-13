@@ -28,7 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func createMostPopularArticlesNavigationController() -> UINavigationController {
         let mostPopularVC = MostPopularArticlesVC()
         mostPopularVC.title = "Most Popular Articles"
-        mostPopularVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
+        mostPopularVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "star.fill"), tag: 0)
         
         return UINavigationController(rootViewController: mostPopularVC)
     }
@@ -37,7 +37,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func createSearchNavigationController() -> UINavigationController {
         let searchVC = SearchVC()
         searchVC.title = "Search"
-        searchVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 1)
+        searchVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "magnifyingglass"), tag: 1)
         
         return UINavigationController(rootViewController: searchVC)
     }

@@ -20,7 +20,7 @@ class ArticleDetailsVC: UIViewController {
     let dateLabel = NYTLabel(textAlignment: .left, textStyle: .body, color: .secondaryLabel)
     let articleTitleLabel = NYTLabel(textAlignment: .left, textStyle: .title1, color: .label)
     let abstractLabel = NYTLabel(textAlignment: .left, textStyle: .body, color: .label)
-    let byLineLabel = NYTLabel(textAlignment: .left, textStyle: .title3, color: .label)
+    let byLineLabel = NYTLabel(textAlignment: .left, textStyle: .headline, color: .label)
     let articleImageView = UIImageView()
     let captionLabel = NYTLabel(textAlignment: .center, textStyle: .caption1, color: .secondaryLabel)
     

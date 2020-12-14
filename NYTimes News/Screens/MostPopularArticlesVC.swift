@@ -63,4 +63,12 @@ extension MostPopularArticlesVC: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let destination = ArticleDetailsVC()
+        destination.article = articles[indexPath.row]
+        navigationController?.pushViewController(destination, animated: true)
+        
+    }
 }

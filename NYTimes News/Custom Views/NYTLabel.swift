@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NYTByLineLabel: UILabel {
+class NYTLabel: UILabel {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,16 +20,17 @@ class NYTByLineLabel: UILabel {
     }
     
     
-    init(textAlignment: NSTextAlignment) {
+    init(textAlignment: NSTextAlignment, textStyle: UIFont.TextStyle, color: UIColor) {
         super.init(frame: .zero)
         self.textAlignment = textAlignment
+        font = UIFont.preferredFont(forTextStyle: textStyle)
+        textColor = color
         configure()
     }
     
     
     private func configure() {
-        font = UIFont.preferredFont(forTextStyle: .body)
-        textColor = .secondaryLabel
+        numberOfLines = 0
         adjustsFontSizeToFitWidth = true
         minimumScaleFactor = 0.75
         lineBreakMode = .byWordWrapping

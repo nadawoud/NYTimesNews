@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		61184EC225861F2400585997 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61184EC125861F2400585997 /* ArticleCell.swift */; };
 		61184EC625864D9800585997 /* NYTTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61184EC525864D9800585997 /* NYTTitleLabel.swift */; };
-		61184EC92586568D00585997 /* NYTByLineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61184EC82586568D00585997 /* NYTByLineLabel.swift */; };
+		61184EC92586568D00585997 /* NYTLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61184EC82586568D00585997 /* NYTLabel.swift */; };
 		611AF927258612C900FC09C0 /* NYTimesError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611AF926258612C900FC09C0 /* NYTimesError.swift */; };
 		613AEA6A2582996E00F95515 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613AEA692582996E00F95515 /* AppDelegate.swift */; };
 		613AEA6C2582996E00F95515 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613AEA6B2582996E00F95515 /* SceneDelegate.swift */; };
@@ -27,7 +27,7 @@
 /* Begin PBXFileReference section */
 		61184EC125861F2400585997 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		61184EC525864D9800585997 /* NYTTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTTitleLabel.swift; sourceTree = "<group>"; };
-		61184EC82586568D00585997 /* NYTByLineLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTByLineLabel.swift; sourceTree = "<group>"; };
+		61184EC82586568D00585997 /* NYTLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTLabel.swift; sourceTree = "<group>"; };
 		611AF926258612C900FC09C0 /* NYTimesError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTimesError.swift; sourceTree = "<group>"; };
 		613AEA662582996E00F95515 /* NYTimes News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NYTimes News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		613AEA692582996E00F95515 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 			children = (
 				61184EC125861F2400585997 /* ArticleCell.swift */,
 				61184EC525864D9800585997 /* NYTTitleLabel.swift */,
-				61184EC82586568D00585997 /* NYTByLineLabel.swift */,
+				61184EC82586568D00585997 /* NYTLabel.swift */,
 				61FD3C3525865B0A0027E29A /* NYTArticleThumbnailImageView.swift */,
 			);
 			path = "Custom Views";
@@ -222,7 +222,7 @@
 				61184EC225861F2400585997 /* ArticleCell.swift in Sources */,
 				61184EC625864D9800585997 /* NYTTitleLabel.swift in Sources */,
 				61AD686A2583D350009C93A4 /* NetworkManager.swift in Sources */,
-				61184EC92586568D00585997 /* NYTByLineLabel.swift in Sources */,
+				61184EC92586568D00585997 /* NYTLabel.swift in Sources */,
 				6188DEE42587ED4C001758F7 /* ArticleDetailsVC.swift in Sources */,
 				61A928722582B22C00D2E378 /* MostPopularArticlesVC.swift in Sources */,
 				61A928752582B2E400D2E378 /* SearchVC.swift in Sources */,

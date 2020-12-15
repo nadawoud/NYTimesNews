@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NYTArticleThumbnailImageView: UIImageView {
+class NYTThumbnailImageView: UIImageView {
     
     let placeholderImage = UIImage(named: "placeholder")
     

@@ -12,7 +12,7 @@ class ArticleCell: UITableViewCell {
     static let reuseID = "ArticleCell"
     let padding: CGFloat = 10
     
-    let articleImageView = NYTArticleThumbnailImageView(frame: .zero)
+    let articleImageView = NYTThumbnailImageView(frame: .zero)
     let titleLabel = NYTTitleLabel(textAlignment: .left, fontSize: 14)
     let byLineLabel = NYTLabel(textAlignment: .left, textStyle: .caption1, color: .secondaryLabel)
     let dateLabel = NYTLabel(textAlignment: .left, textStyle: .caption1, color: .secondaryLabel)

@@ -19,6 +19,7 @@ struct Article: Codable {
     let byline: String
     let title: String
     let abstract: String
+    let section: String
     let media:[Media]
     
     struct Media: Codable {

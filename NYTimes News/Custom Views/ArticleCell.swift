@@ -33,7 +33,7 @@ class ArticleCell: UITableViewCell {
     func set(article: Article) {
         titleLabel.text = article.title
         byLineLabel.text = article.byline
-        dateLabel.text = article.publishedDate
+        dateLabel.setTextPrependedBySFSymbol(article.publishedDate, symbolName: "calendar")
     }
     
     

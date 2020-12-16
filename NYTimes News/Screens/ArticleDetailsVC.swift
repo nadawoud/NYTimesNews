@@ -98,6 +98,7 @@ class ArticleDetailsVC: UIViewController {
             articleImageView.topAnchor.constraint(equalTo: byLineLabel.bottomAnchor, constant: Padding.inBetween),
             articleImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             articleImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            articleImageView.heightAnchor.constraint(greaterThanOrEqualToConstant: 250)
         ])
     }
 }

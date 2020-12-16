@@ -21,7 +21,7 @@ class ArticleDetailsVC: UIViewController {
     let articleTitleLabel = NYTLabel(textAlignment: .left, textStyle: .title1, color: .label)
     let abstractLabel = NYTLabel(textAlignment: .left, textStyle: .body, color: .label)
     let byLineLabel = NYTLabel(textAlignment: .left, textStyle: .headline, color: .label)
-    let articleImageView = UIImageView()
+    let articleImageView = NYTImageView(cornerRadius: 0)
     let captionLabel = NYTLabel(textAlignment: .center, textStyle: .caption1, color: .secondaryLabel)
     
     override func viewDidLoad() {
@@ -89,14 +89,15 @@ class ArticleDetailsVC: UIViewController {
     
     func configureArticleImageView () {
         view.addSubview(articleImageView)
-        articleImageView.translatesAutoresizingMaskIntoConstraints = false
-        articleImageView.image = UIImage(named: "placeholder")!
+        
+        if let imageURL = article.media.first?.mediaMetadata.last?.url {
+            articleImageView.downloadImage(from: imageURL)
+        }
         
         NSLayoutConstraint.activate([
             articleImageView.topAnchor.constraint(equalTo: byLineLabel.bottomAnchor, constant: Padding.inBetween),
-            articleImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            articleImageView.heightAnchor.constraint(equalToConstant: 200),
-            articleImageView.widthAnchor.constraint(equalToConstant: 200)
+            articleImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            articleImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         ])
     }
 }

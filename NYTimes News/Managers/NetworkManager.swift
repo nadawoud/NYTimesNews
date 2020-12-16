@@ -5,13 +5,14 @@
 //  Created by Nada Yehia Dawoud on 11/12/2020.
 //
 
-import Foundation
+import UIKit
 
 class NetworkManager {
     
     static let shared = NetworkManager()
     private let baseURL = "https://api.nytimes.com/svc/"
     private let apiKey = "iIzsaMfgygBpoDQAwtr02QXIAdZsNQFt"
+    let cache = NSCache<NSString, UIImage>()
     
     private init() {}
     

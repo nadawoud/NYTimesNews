@@ -7,9 +7,10 @@
 
 import UIKit
 
-class NYTThumbnailImageView: UIImageView {
+class NYTImageView: UIImageView {
     
     let placeholderImage = UIImage(named: "placeholder")
+    let cache = NetworkManager.shared.cache
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,8 +23,14 @@ class NYTThumbnailImageView: UIImageView {
     }
     
     
+    init(cornerRadius: CGFloat){
+        super.init(frame: .zero)
+        self.layer.cornerRadius = cornerRadius
+        configure()
+    }
+    
+    
     private func configure() {
-        layer.cornerRadius = 10
         clipsToBounds = true
         contentMode = .scaleAspectFill
         image = placeholderImage
@@ -32,6 +39,13 @@ class NYTThumbnailImageView: UIImageView {
     
     
     func downloadImage(from urlString: String) {
+        
+        let cacheKey = NSString(string: urlString)
+        
+        if let image = cache.object(forKey: cacheKey) {
+            self.image = image
+            return
+        }
         
         guard let url = URL(string: urlString) else { return }
         
@@ -44,6 +58,8 @@ class NYTThumbnailImageView: UIImageView {
             guard let data = data else { return }
             
             guard let image = UIImage(data: data) else { return }
+            
+            self.cache.setObject(image, forKey: cacheKey )
             
             DispatchQueue.main.async { self.image = image }
         }

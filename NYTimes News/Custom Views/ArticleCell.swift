@@ -34,6 +34,10 @@ class ArticleCell: UITableViewCell {
         titleLabel.text = article.title
         byLineLabel.text = article.byline
         dateLabel.setTextPrependedBySFSymbol(article.publishedDate, symbolName: "calendar")
+        
+        if let imageURL = article.media.first?.mediaMetadata.first?.url {
+            articleImageView.downloadImage(from: imageURL)
+        }
     }
     
     

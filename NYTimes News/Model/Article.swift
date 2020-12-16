@@ -24,11 +24,16 @@ struct Article: Codable {
     
     struct Media: Codable {
         let caption: String
-        let mediaMetadata: [MediaMetadata]?
+        let mediaMetadata: [MediaMetadata]
         
         struct MediaMetadata: Codable {
             let url: String
             let format: String
+        }
+        
+        enum CodingKeys: String, CodingKey {
+            case mediaMetadata = "media-metadata"
+            case caption
         }
     }
 }

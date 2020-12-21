@@ -25,10 +25,10 @@ I used the original design of NYTimes app as a refernece for Article's Details s
 
 
 
-<figure align="center">
+<p align="center">
   <img src="refernece.jpeg" width="250" max-width="90%" alt="Design refernece" />
-  <figcaption>Screenshot of the original NYTimes app.</figcaption>
-</figure> 
+</p> 
+
 
 
 

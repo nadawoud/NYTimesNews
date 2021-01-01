@@ -17,7 +17,7 @@ class NetworkManager {
     private init() {}
     
     func getMostViewedArticles(in period: Period, completed: @escaping (Result<PopularArticlesData, NYTimesError>) -> Void) {
-        let endpoint = baseURL + "mostpopular/v2/viewed/1.json?api-key=\(apiKey)"
+        let endpoint = baseURL + "mostpopular/v2/viewed/\(period.rawValue).json?api-key=\(apiKey)"
         
         guard let url = URL(string: endpoint) else {
             completed(.failure(.incorrectURL))

@@ -17,6 +17,7 @@ class ArticleDetailsVC: UIViewController {
     
     var article: Article!
     
+    let scrollView = UIScrollView()
     let sectionLabel = NYTLabel(textAlignment: .left, textStyle: .body, color: .secondaryLabel)
     let articleTitleLabel = NYTLabel(textAlignment: .left, textStyle: .title1, color: .label)
     let abstractLabel = NYTLabel(textAlignment: .left, textStyle: .body, color: .label)
@@ -28,6 +29,7 @@ class ArticleDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        configureScrollView()
         configureSectionLabel()
         configureArticleTitleLabel()
         configureAbstractLabel()
@@ -35,15 +37,32 @@ class ArticleDetailsVC: UIViewController {
         configureDateLabel()
         configureArticleImageView()
         configureCaptionLabel()
+        setScrollViewContentSize()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setScrollViewContentSize()
+    }
+    
+    
+    func configureScrollView() {
+        scrollView.frame = self.view.bounds
+        view.addSubview(scrollView)
+        scrollView.pin(to: view)
+    }
+    
+    func setScrollViewContentSize() {
+        scrollView.contentSize = CGSize(width: scrollView.bounds.width, height: scrollView.bounds.width * 2)
     }
     
     
     func configureSectionLabel() {
-        view.addSubview(sectionLabel)
+        scrollView.addSubview(sectionLabel)
         sectionLabel.text = article.section
         
         NSLayoutConstraint.activate([
-            sectionLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Padding.inBetween),
+            sectionLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: Padding.inBetween),
             sectionLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Padding.leading),
             sectionLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: Padding.trailing),
             sectionLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 17)
@@ -52,7 +71,7 @@ class ArticleDetailsVC: UIViewController {
     
     
     func configureArticleTitleLabel() {
-        view.addSubview(articleTitleLabel)
+        scrollView.addSubview(articleTitleLabel)
         articleTitleLabel.text = article.title
         
         NSLayoutConstraint.activate([
@@ -65,7 +84,7 @@ class ArticleDetailsVC: UIViewController {
     
     
     func configureAbstractLabel() {
-        view.addSubview(abstractLabel)
+        scrollView.addSubview(abstractLabel)
         abstractLabel.text = article.abstract.isEmpty ? article.title : article.abstract
         
         NSLayoutConstraint.activate([
@@ -78,7 +97,7 @@ class ArticleDetailsVC: UIViewController {
     
     
     func configureByLineLabel() {
-        view.addSubview(byLineLabel)
+        scrollView.addSubview(byLineLabel)
         byLineLabel.text = article.byline
         
         NSLayoutConstraint.activate([
@@ -91,7 +110,7 @@ class ArticleDetailsVC: UIViewController {
     
     
     func configureDateLabel() {
-        view.addSubview(dateLabel)
+        scrollView.addSubview(dateLabel)
         dateLabel.text = article.publishedDate
         
         NSLayoutConstraint.activate([
@@ -104,7 +123,7 @@ class ArticleDetailsVC: UIViewController {
     
     
     func configureArticleImageView () {
-        view.addSubview(articleImageView)
+        scrollView.addSubview(articleImageView)
         
         if let imageURL = article.media.first?.mediaMetadata.last?.url {
             articleImageView.downloadImage(from: imageURL)
@@ -120,7 +139,7 @@ class ArticleDetailsVC: UIViewController {
     
     
     func configureCaptionLabel() {
-        view.addSubview(captionLabel)
+        scrollView.addSubview(captionLabel)
         let captionText = article.media.first?.caption
         captionLabel.text = captionText
         

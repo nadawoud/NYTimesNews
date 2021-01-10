@@ -44,7 +44,7 @@ class MostPopularArticlesVC: UIViewController {
                 self.articles.append(contentsOf: articlesData.results)
                 DispatchQueue.main.async { self.tableView.reloadData() }
             case .failure(let error):
-                print(error.rawValue)
+                self.presentNYTAlertOnMainThread(title: "Something Went Wrong", message: error.rawValue, buttonTitle: "Okay")
             }
         }
     }

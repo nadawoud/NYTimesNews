@@ -38,6 +38,8 @@ I used the original design of NYTimes app as a refernece for Article's Details s
   <img src="article-list.png" width="300" max-width="90%" alt="Article list" />
   <img src="article.png" width="300" max-width="90%" alt="Article's details" />
 </p> 
+
+
 ## UI Built Completely Programmatically 
 
 I chose to build all UI elements programmatically for this app -though I really love Storyboards- because I wanted to build a complete app without a single Storyboard.
